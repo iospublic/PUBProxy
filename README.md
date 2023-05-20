@@ -1,6 +1,6 @@
 # PUBProxy
 
-[![CI Status](https://img.shields.io/travis/lanmemory@163.com/PUBProxy.svg?style=flat)](https://travis-ci.org/lanmemory@163.com/PUBProxy)
+[![CI Status](https://img.shields.io/travis/which_name@163.com/PUBProxy.svg?style=flat)](https://travis-ci.org/which_name@163.com/PUBProxy)
 [![Version](https://img.shields.io/cocoapods/v/PUBProxy.svg?style=flat)](https://cocoapods.org/pods/PUBProxy)
 [![License](https://img.shields.io/cocoapods/l/PUBProxy.svg?style=flat)](https://cocoapods.org/pods/PUBProxy)
 [![Platform](https://img.shields.io/cocoapods/p/PUBProxy.svg?style=flat)](https://cocoapods.org/pods/PUBProxy)
@@ -22,7 +22,7 @@ pod 'PUBProxy'
 
 ## Author
 
-lanmemory@163.com, which_name@163.com
+which_name@163.com, which_name@163.com
 
 ## License
 
