@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PUBProxy'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'A short description of PUBProxy.'
 
 # This description is used to generate tags and improve search results.
@@ -21,22 +21,21 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/lanmemory@163.com/PUBProxy'
+  s.homepage         = 'https://github.com/iospublic/PUBProxy'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'lanmemory@163.com' => 'which_name@163.com' }
-  s.source           = { :git => 'https://github.com/lanmemory@163.com/PUBProxy.git', :tag => s.version.to_s }
+  s.author           = { 'iospublic' => 'which_name@163.com' }
+  s.source           = { :git => 'https://github.com/iospublic/PUBProxy.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
-
+  s.ios.deployment_target           = '11.0'
+  # 允许静态库安装
+  s.static_framework = true
+  # swift 编译版本
+  s.swift_version = '5.0'
+  # 公开头文件
+  s.public_header_files = 'PUBProxy/Classes/**/*.h'
   s.source_files = 'PUBProxy/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'PUBProxy' => ['PUBProxy/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # 第三方依赖
+  s.dependency 'TDFModuleKit', '1.0.6'
 end
