@@ -1,6 +1,5 @@
 //PBRequestBlock.h
 
-
 #import <Foundation/Foundation.h>
 typedef NSURLRequest *(^requestBlock) (NSURLRequest *request);
 typedef NSData *(^responseBlock) (NSURLResponse *response, NSData *data);

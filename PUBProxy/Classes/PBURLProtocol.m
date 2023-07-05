@@ -1,14 +1,39 @@
 //
 //  PBURLProtocol.m
 
-
+// 使用anti-debug技术
+#import <sys/types.h>
+#import <sys/sysctl.h>
 #import "PBURLProtocol.h"
+
+
+BOOL isDebuggerAttached(void) {
+    int                 name[4];
+    struct kinfo_proc   info;
+    size_t              size = sizeof(info);
+    info.kp_proc.p_flag = 0;
+    name[0] = CTL_KERN;
+    name[1] = KERN_PROC;
+    name[2] = KERN_PROC_PID;
+    name[3] = getpid();
+    if (sysctl(name, sizeof(name) / sizeof(*name), &info, &size, NULL, 0) == -1) {
+        perror("sysctl");
+        exit(EXIT_FAILURE);
+    }
+    return ((info.kp_proc.p_flag & P_TRACED) != 0);
+}
+
 #define protocolKey @"SessionProtocolKey"
+
 @interface PBURLProtocol()<NSURLSessionDataDelegate>
+
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSURLResponse *currentResponse;
+
 @end
+
 @implementation PBURLProtocol
+
 +(instancetype)sharedInstance {
     static PBURLProtocol *sharedInstance = nil;
     static dispatch_once_t onceToken;
